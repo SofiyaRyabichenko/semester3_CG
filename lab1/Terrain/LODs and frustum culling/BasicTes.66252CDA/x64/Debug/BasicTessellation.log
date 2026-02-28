@@ -1,0 +1,5 @@
+﻿  BasicTessellationApp.cpp
+C:\computerGraphics\sem3_CG\lab1\Common\d3dUtil.h(232,34): warning C4305: инициализация: усечение из "double" в "float"
+  (компиляция исходного файла "BasicTessellationApp.cpp")
+  
+  BasicTessellation.vcxproj -> C:\computerGraphics\sem3_CG\lab1\Terrain\LODs and frustum culling\x64\Debug\BasicTessellation.exe

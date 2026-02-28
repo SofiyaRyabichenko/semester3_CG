@@ -1,0 +1,10 @@
+﻿  BasicTessellationApp.cpp
+C:\Users\Анна\Documents\!ИТМО\Компьютерная графика\VS\3semester\src\Common\d3dUtil.h(232,34): warning C4305: инициализация: усечение из "double" в "float"
+  (компиляция исходного файла "BasicTessellationApp.cpp")
+  
+  FrameResource.cpp
+C:\Users\Анна\Documents\!ИТМО\Компьютерная графика\VS\3semester\src\Common\d3dUtil.h(232,34): warning C4305: инициализация: усечение из "double" в "float"
+  (компиляция исходного файла "FrameResource.cpp")
+  
+  Создание кода...
+  BasicTessellation.vcxproj -> C:\Users\Анна\Documents\!ИТМО\Компьютерная графика\VS\3semester\src\Terrain\UploadTerrain\x64\Debug\BasicTessellation.exe

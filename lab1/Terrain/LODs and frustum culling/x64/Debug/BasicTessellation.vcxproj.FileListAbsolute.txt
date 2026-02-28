@@ -1,0 +1,7 @@
+C:\Users\Анна\Documents\!ИТМО\Компьютерная графика\VS\intro-to-dx12-master\src\Chapter 14 The Tessellation Stages\BasicTessellation\x64\Debug\BasicTessellation.exe
+C:\Users\Анна\Documents\!ИТМО\Компьютерная графика\VS\intro-to-dx12-master\src\Chapter 14 The Tessellation Stages\DIsplacement_map\x64\Debug\BasicTessellation.exe
+E:\КГ актуальные файлы\VS\intro-to-dx12-master\src\Chapter 14 The Tessellation Stages\BasicTessellation\x64\Debug\BasicTessellation.exe
+C:\Users\Анна\Documents\!ИТМО\Компьютерная графика\VS\intro-to-dx12-master\src\Chapter 14 The Tessellation Stages\UploadTerrain\x64\Debug\BasicTessellation.exe
+C:\Users\Анна\Documents\!ИТМО\Компьютерная графика\VS\3semestr\src\Terrain\UploadTerrain\x64\Debug\BasicTessellation.exe
+C:\Users\Анна\Documents\!ИТМО\Компьютерная графика\VS\3semester\src\Terrain\Tiles\x64\Debug\BasicTessellation.exe
+C:\Users\Анна\Documents\!ИТМО\Компьютерная графика\VS\3semester\src\Terrain\UploadTerrain\x64\Debug\BasicTessellation.exe
