@@ -1,0 +1,156 @@
+﻿  D3D12MemAlloc.cpp
+  imgui_impl_win32.cpp
+  imgui.cpp
+  imgui_demo.cpp
+  imgui_draw.cpp
+  imgui_tables.cpp
+  imgui_widgets.cpp
+  component.cpp
+  animationcomponent.cpp
+  cameracomponent.cpp
+  lightcomponent.cpp
+  meshcomponent.cpp
+  particlespawnercomponent.cpp
+  contentmanager.cpp
+  entity.cpp
+  framework.cpp
+  inputmanager.cpp
+  gltfloader.cpp
+  particleloader.cpp
+  textureloader.cpp
+  scene.cpp
+  move changed blocks into a separate list ot avoid looping over all of them at runtime
+  taskmanager.cpp
+  uibackend.cpp
+  uimanager.cpp
+  framework_win.cpp
+  inputmanager_win.cpp
+C:\Users\Анна\Documents\!ИТМО\Компьютерная графика\CG-Lab2\Lab 2\Lab2\TAA\Kits\Cauldron2\dx12\framework\core\framework.cpp(70,10): error C1083: Не удается открыть файл включение: pix3.h: No such file or directory,
+  uibackend_win.cpp
+  corecounts.cpp
+  fileio.cpp
+  log.cpp
+  math.cpp
+  animation.cpp
+  buffer.cpp
+  color_conversion.cpp
+  commandlist.cpp
+  copyresource.cpp
+  device.cpp
+  buffer_dx12.cpp
+  commandlist_dx12.cpp
+  copyresource_dx12.cpp
+  device_dx12.cpp
+  dynamicbufferpool_dx12.cpp
+  gpuresource_dx12.cpp
+C:\Users\Анна\Documents\!ИТМО\Компьютерная графика\CG-Lab2\Lab 2\Lab2\TAA\Kits\OpenSource\amd\memoryallocator\D3D12MemAlloc.h(68,18): error C1083: Не удается открыть файл включение: directx/d3d12.h: No such file or directory,
+  (компиляция исходного файла "framework/render/dx12/copyresource_dx12.cpp")
+  
+  indirectworkload_dx12.cpp
+C:\Users\Анна\Documents\!ИТМО\Компьютерная графика\CG-Lab2\Lab 2\Lab2\TAA\Kits\OpenSource\amd\memoryallocator\D3D12MemAlloc.h(68,18): error C1083: Не удается открыть файл включение: directx/d3d12.h: No such file or directory,
+  (компиляция исходного файла "framework/render/dx12/gpuresource_dx12.cpp")
+  
+  parameterset_dx12.cpp
+  pipelinedesc_dx12.cpp
+C:\Users\Анна\Documents\!ИТМО\Компьютерная графика\CG-Lab2\Lab 2\Lab2\TAA\Kits\Cauldron2\dx12\framework\render\dx12\buffer_dx12.h(27,10): error C1083: Не удается открыть файл включение: directx/d3d12.h: No such file or directory,
+  (компиляция исходного файла "framework/render/dx12/buffer_dx12.cpp")
+  
+C:\Users\Анна\Documents\!ИТМО\Компьютерная графика\CG-Lab2\Lab 2\Lab2\TAA\Kits\OpenSource\amd\memoryallocator\D3D12MemAlloc.h(68,18): error C1083: Не удается открыть файл включение: directx/d3d12.h: No such file or directory,
+  (компиляция исходного файла "framework/render/dx12/dynamicbufferpool_dx12.cpp")
+  
+  pipelineobject_dx12.cpp
+  profiler_dx12.cpp
+C:\Users\Анна\Documents\!ИТМО\Компьютерная графика\CG-Lab2\Lab 2\Lab2\TAA\Kits\Cauldron2\dx12\framework\render\dx12\commandlist_dx12.h(28,10): error C1083: Не удается открыть файл включение: directx/d3d12.h: No such file or directory,
+  (компиляция исходного файла "framework/render/dx12/device_dx12.cpp")
+  
+  resourceviewallocator_dx12.cpp
+  resourceview_dx12.cpp
+C:\Users\Анна\Documents\!ИТМО\Компьютерная графика\CG-Lab2\Lab 2\Lab2\TAA\Kits\Cauldron2\dx12\framework\render\dx12\buffer_dx12.h(27,10): error C1083: Не удается открыть файл включение: directx/d3d12.h: No such file or directory,
+  (компиляция исходного файла "framework/render/dx12/commandlist_dx12.cpp")
+  
+  rootsignaturedesc_dx12.cpp
+C:\Users\Анна\Documents\!ИТМО\Компьютерная графика\CG-Lab2\Lab 2\Lab2\TAA\Kits\Cauldron2\dx12\framework\render\dx12\commandlist_dx12.h(28,10): error C1083: Не удается открыть файл включение: directx/d3d12.h: No such file or directory,
+  (компиляция исходного файла "framework/render/dx12/parameterset_dx12.cpp")
+  
+  rootsignature_dx12.cpp
+C:\Users\Анна\Documents\!ИТМО\Компьютерная графика\CG-Lab2\Lab 2\Lab2\TAA\Kits\Cauldron2\dx12\framework\render\dx12\indirectworkload_dx12.h(26,10): error C1083: Не удается открыть файл включение: directx/d3d12.h: No such file or directory,
+  (компиляция исходного файла "framework/render/dx12/indirectworkload_dx12.cpp")
+  
+  rtresources_dx12.cpp
+  sampler_dx12.cpp
+  swapchain_dx12.cpp
+C:\Users\Анна\Documents\!ИТМО\Компьютерная графика\CG-Lab2\Lab 2\Lab2\TAA\Kits\Cauldron2\dx12\framework\render\dx12\commandlist_dx12.h(28,10): error C1083: Не удается открыть файл включение: directx/d3d12.h: No such file or directory,
+  (компиляция исходного файла "framework/render/dx12/profiler_dx12.cpp")
+  
+  texture_dx12.cpp
+C:\Users\Анна\Documents\!ИТМО\Компьютерная графика\CG-Lab2\Lab 2\Lab2\TAA\Kits\OpenSource\amd\memoryallocator\D3D12MemAlloc.h(68,18): error C1083: Не удается открыть файл включение: directx/d3d12.h: No such file or directory,
+  (компиляция исходного файла "framework/render/dx12/pipelinedesc_dx12.cpp")
+  
+  uploadheap_dx12.cpp
+  dynamicbufferpool.cpp
+C:\Users\Анна\Documents\!ИТМО\Компьютерная графика\CG-Lab2\Lab 2\Lab2\TAA\Kits\OpenSource\amd\memoryallocator\D3D12MemAlloc.h(68,18): error C1083: Не удается открыть файл включение: directx/d3d12.h: No such file or directory,
+  (компиляция исходного файла "framework/render/dx12/pipelineobject_dx12.cpp")
+  
+  dynamicresourcepool.cpp
+  gpuresource.cpp
+C:\Users\Анна\Documents\!ИТМО\Компьютерная графика\CG-Lab2\Lab 2\Lab2\TAA\Kits\Cauldron2\dx12\framework\render\dx12\sampler_dx12.h(27,10): error C1083: Не удается открыть файл включение: directx/d3d12.h: No such file or directory,
+  (компиляция исходного файла "framework/render/dx12/sampler_dx12.cpp")
+  
+  material.cpp
+C:\Users\Анна\Documents\!ИТМО\Компьютерная графика\CG-Lab2\Lab 2\Lab2\TAA\Kits\Cauldron2\dx12\framework\render\dx12\rootsignaturedesc_dx12.h(26,10): error C1083: Не удается открыть файл включение: directx/d3dx12.h: No such file or directory,
+  (компиляция исходного файла "framework/render/dx12/rootsignaturedesc_dx12.cpp")
+  
+  mesh.cpp
+C:\Users\Анна\Documents\!ИТМО\Компьютерная графика\CG-Lab2\Lab 2\Lab2\TAA\Kits\OpenSource\amd\memoryallocator\D3D12MemAlloc.h(68,18): error C1083: Не удается открыть файл включение: directx/d3d12.h: No such file or directory,
+  (компиляция исходного файла "framework/render/dx12/resourceview_dx12.cpp")
+  
+  parameterset.cpp
+C:\Users\Анна\Documents\!ИТМО\Компьютерная графика\CG-Lab2\Lab 2\Lab2\TAA\Kits\Cauldron2\dx12\framework\render\dx12\buffer_dx12.h(27,10): error C1083: Не удается открыть файл включение: directx/d3d12.h: No such file or directory,
+  (компиляция исходного файла "framework/render/dx12/rtresources_dx12.cpp")
+  
+  particle.cpp
+C:\Users\Анна\Documents\!ИТМО\Компьютерная графика\CG-Lab2\Lab 2\Lab2\TAA\Kits\OpenSource\amd\memoryallocator\D3D12MemAlloc.h(68,18): error C1083: Не удается открыть файл включение: directx/d3d12.h: No such file or directory,
+  (компиляция исходного файла "framework/render/dx12/rootsignature_dx12.cpp")
+  
+  pipelinedesc.cpp
+C:\Users\Анна\Documents\!ИТМО\Компьютерная графика\CG-Lab2\Lab 2\Lab2\TAA\Kits\OpenSource\amd\memoryallocator\D3D12MemAlloc.h(68,18): error C1083: Не удается открыть файл включение: directx/d3d12.h: No such file or directory,
+  (компиляция исходного файла "framework/render/dx12/resourceviewallocator_dx12.cpp")
+  
+  profiler.cpp
+C:\Users\Анна\Documents\!ИТМО\Компьютерная графика\CG-Lab2\Lab 2\Lab2\TAA\Kits\OpenSource\amd\memoryallocator\D3D12MemAlloc.h(68,18): error C1083: Не удается открыть файл включение: directx/d3d12.h: No such file or directory,
+  (компиляция исходного файла "framework/render/dx12/uploadheap_dx12.cpp")
+  
+  rasterview.cpp
+C:\Users\Анна\Documents\!ИТМО\Компьютерная графика\CG-Lab2\Lab 2\Lab2\TAA\Kits\OpenSource\amd\memoryallocator\D3D12MemAlloc.h(68,18): error C1083: Не удается открыть файл включение: directx/d3d12.h: No such file or directory,
+  (компиляция исходного файла "framework/render/dx12/texture_dx12.cpp")
+  
+  rendermodule.cpp
+C:\Users\Анна\Documents\!ИТМО\Компьютерная графика\CG-Lab2\Lab 2\Lab2\TAA\Kits\Cauldron2\dx12\framework\render\dx12\commandlist_dx12.h(28,10): error C1083: Не удается открыть файл включение: directx/d3d12.h: No such file or directory,
+  (компиляция исходного файла "framework/render/dx12/swapchain_dx12.cpp")
+  
+  fpslimiterrendermodule.cpp
+  raytracingrendermodule.cpp
+  skinningrendermodule.cpp
+  swapchainrendermodule.cpp
+  tonemappingrendermodule.cpp
+  uirendermodule.cpp
+  resourceresizedlistener.cpp
+  resourceview.cpp
+  resourceviewallocator.cpp
+  rootsignaturedesc.cpp
+  shaderbuilderhelper.cpp
+  shadowmapresourcepool.cpp
+  swapchain.cpp
+  texture.cpp
+  uploadheap.cpp
+  shaderbuilder_win.cpp
+  animatedtexturesrendermodule.cpp
+  gbufferrendermodule.cpp
+  gpuparticlerendermodule.cpp
+  parallelsort.cpp
+  lightingrendermodule.cpp
+  rastershadowrendermodule.cpp
+  rendermoduleregistry.cpp
+  skydomerendermodule.cpp
+  taarendermodule.cpp
+  translucencyrendermodule.cpp
