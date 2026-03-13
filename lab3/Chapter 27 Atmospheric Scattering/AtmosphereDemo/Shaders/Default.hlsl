@@ -74,8 +74,19 @@ float4 PS(VertexOut pin) : SV_Target
     float roughness = matData.Roughness;
     uint diffuseMapIndex = matData.DiffuseMapIndex;
     uint normalMapIndex = matData.NormalMapIndex;
+    
+    if (pin.PosW.y < 0.1f)
+    {
+        // Платформа
+        diffuseAlbedo = float4(0.15f, 0.2f, 0.3f, 1.0f);
+    }
+    else
+    {
+        // Шар (он находится выше платформы)
+        diffuseAlbedo = float4(0.1f, 0.9f, 0.2f, 1.0f);
+    }
 
-    diffuseAlbedo *= gTextureMaps[diffuseMapIndex].Sample(gsamAnisotropicWrap, pin.TexC);
+    //diffuseAlbedo *= gTextureMaps[diffuseMapIndex].Sample(gsamAnisotropicWrap, pin.TexC);
 
     pin.NormalW = normalize(pin.NormalW);
 

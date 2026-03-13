@@ -113,24 +113,24 @@ void SkyDome::SetCleanAtmosphere()
 
 void SkyDome::SetDirtyAtmosphere()
 {
-    mActiveConfig.DensityMultiplier = 3.0f;
-    mActiveConfig.MieAnisotropy = 0.6f;
-    mActiveConfig.SunIntensity = 18.0f;
-    mActiveConfig.Exposure = 1.2f;
+    mActiveConfig.DensityMultiplier = 3.5f; 
+    mActiveConfig.MieAnisotropy = 0.65f; 
+    mActiveConfig.SunIntensity = 17.0f; 
+    mActiveConfig.Exposure = 1.15f; 
 }
 
 void SkyDome::SetMarsAtmosphere()
 {
-    mActiveConfig.DensityMultiplier = 0.3f;
-    mActiveConfig.MieAnisotropy = 0.8f;
-    mActiveConfig.SunIntensity = 15.0f;
-    mActiveConfig.Exposure = 2.0f;
+    mActiveConfig.DensityMultiplier = 0.45f;
+    mActiveConfig.MieAnisotropy = 0.82f; 
+    mActiveConfig.SunIntensity = 17.5f; 
+    mActiveConfig.Exposure = 1.9f; 
 }
 
 void SkyDome::SetSunsetAtmosphere()
 {
-    mActiveConfig.DensityMultiplier = 2.0f;
-    mActiveConfig.MieAnisotropy = 0.85f;
-    mActiveConfig.SunIntensity = 25.0f;
-    mActiveConfig.Exposure = 1.8f;
+    mActiveConfig.DensityMultiplier = 2.2f; 
+    mActiveConfig.MieAnisotropy = 0.87f; 
+    mActiveConfig.SunIntensity = 28.0f; 
+    mActiveConfig.Exposure = 1.7f;
 }

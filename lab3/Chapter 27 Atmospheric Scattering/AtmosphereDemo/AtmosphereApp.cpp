@@ -112,6 +112,8 @@ private:
 
     float mSunAngle = 0.8f;
     float mSunAzimuth = 0.0f;
+    bool mSunAnimationEnabled = false;
+    float mSunAnimationSpeed = 0.3f;
 
     bool mFogEnabled = true;
     float mFogDensity = 0.02f;
@@ -152,6 +154,10 @@ AtmosphericDemo::AtmosphericDemo(HINSTANCE hInstance)
     : D3DApp(hInstance)
 {
     mMainWndCaption = L"Atmosphere";
+    mLastMousePos.x = 0;
+    mLastMousePos.y = 0;
+    mSunAnimationEnabled = false;
+    mSunAnimationSpeed = 0.3f;
 }
 
 AtmosphericDemo::~AtmosphericDemo()
@@ -168,6 +174,11 @@ bool AtmosphericDemo::Initialize()
     ThrowIfFailed(mCommandList->Reset(mDirectCmdListAlloc.Get(), nullptr));
 
     mCamera.SetPosition(0.0f, 2.0f, -15.0f);
+    mCamera.LookAt(
+        DirectX::XMFLOAT3(0.0f, 10.0f, 15.0f),
+        DirectX::XMFLOAT3(0.0f, 0.0f, 0.0f),
+        DirectX::XMFLOAT3(0.0f, 1.0f, 0.0f)
+    );
 
     mSkyDome = std::make_unique<SkyDome>(md3dDevice.Get(),
         mClientWidth, mClientHeight, DXGI_FORMAT_R16G16B16A16_FLOAT);
@@ -235,7 +246,12 @@ void AtmosphericDemo::Update(const GameTimer& gt)
 {
     OnKeyboardInput(gt);
 
-    // Удалена анимация солнца
+    if (mSunAnimationEnabled)
+    {
+        mSunAngle += mSunAnimationSpeed * gt.DeltaTime();
+        if (mSunAngle > XM_2PI)
+            mSunAngle -= XM_2PI;
+    }
 
     mCurrFrameResourceIndex = (mCurrFrameResourceIndex + 1) % gNumFrameResources;
     mCurrFrameResource = mFrameResources[mCurrFrameResourceIndex].get();
@@ -415,7 +431,19 @@ void AtmosphericDemo::OnKeyboardInput(const GameTimer& gt)
     if (GetAsyncKeyState('Y') & 0x8000)
         mFogHeightFalloff = min(2.0f, mFogHeightFalloff + 0.1f * dt);
 
-    // УДАЛЕНЫ: клавиши управления солнцем (стрелки и пробел)
+    static bool spaceWasPressed = false;
+    if (GetAsyncKeyState(VK_SPACE) & 0x8000)
+    {
+        if (!spaceWasPressed)
+        {
+            mSunAnimationEnabled = !mSunAnimationEnabled;
+            spaceWasPressed = true;
+        }
+    }
+    else
+    {
+        spaceWasPressed = false;
+    }
 
     mCamera.UpdateViewMatrix();
 }
