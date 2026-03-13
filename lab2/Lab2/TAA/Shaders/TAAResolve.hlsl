@@ -88,23 +88,36 @@ float4 PS(VertexOut pin) : SV_Target
     float2 uv = pin.TexC;
     float2 texelSize = 1.0f / gScreenSize;
     
-    // Sample current frame
+    if (gMotionDebugEnabled > 0.5f)
+    {
+        // Получаем raw motion vectors для текущего пикселя
+        float2 rawVelocity = gMotionVectors.Sample(gsamPointClamp, uv).rg;
+        
+        // Визуализация motion vectors
+        float r = (rawVelocity.x + 1.0f) * 0.5f;
+        float g = (rawVelocity.y + 1.0f) * 0.5f;
+        float b = 0.0f;
+        
+        if (length(rawVelocity) < 0.0001f)
+        {
+            // Неподвижные пиксели чёрные
+            return float4(0.f, 0.f, 0.f, 1.0f);
+        }
+        
+        return float4(r, g, b, 1.0f);
+    }
+
     float3 currentRGB = gCurrentFrame.Sample(gsamPointClamp, uv).rgb;
-    
-    // Get dilated velocity - fixes trailing edge on moving objects
     float2 velocity = GetDilatedVelocity(uv, texelSize);
     float2 historyUV = uv + velocity;
     
-    // Bounds check
     if (any(historyUV < 0.0f) || any(historyUV > 1.0f))
     {
         return float4(currentRGB, 1.0f);
     }
     
-    // Sample history
     float3 historyRGB = gHistoryFrame.Sample(gsamLinearClamp, historyUV).rgb;
     
-    // Gather 3x3 neighborhood statistics in YCoCg space
     float3 m1 = float3(0, 0, 0);
     float3 m2 = float3(0, 0, 0);
     
@@ -125,34 +138,17 @@ float4 PS(VertexOut pin) : SV_Target
     m2 /= 9.0f;
     float3 sigma = sqrt(max(m2 - m1 * m1, 0.0f));
     
-    // Variance clipping bounds
-    // Use wider bounds (higher gamma) to allow more history blending for AA
     float velocityPixels = length(velocity * gScreenSize);
     float gamma = lerp(1.5f, 2.5f, saturate(velocityPixels * 0.1f));
     float3 aabbMin = m1 - gamma * sigma;
     float3 aabbMax = m1 + gamma * sigma;
     
-    // Clamp history in YCoCg space
     float3 historyYCoCg = RGBToYCoCg(historyRGB);
     historyYCoCg = clamp(historyYCoCg, aabbMin, aabbMax);
     historyRGB = YCoCgToRGB(historyYCoCg);
     
-    // Blend factor - keep low for good AA accumulation
     float blend = gBlendFactor;
-    
-    // Final blend
     float3 finalColor = lerp(historyRGB, currentRGB, blend);
-    
-    if (gMotionDebugEnabled > 0.5f)
-    {
-        float2 rawVelocity = gMotionVectors.Sample(gsamPointClamp, uv).rg;
-        float velocityMag = length(rawVelocity);
-        
-        if (velocityMag > 0.00005f)
-        {
-            finalColor = float3(1.0f, 0.0f, 0.0f);
-        }
-    }
     
     return float4(finalColor, 1.0f);
 }

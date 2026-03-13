@@ -145,7 +145,7 @@ private:
 
   POINT mCursorPosition;
 
-  bool mShowMotionVectors = false;
+  bool mShowMotionVectors = true;
 };
 
 int WINAPI WinMain(HINSTANCE instance, HINSTANCE prevInstance, PSTR cmdLine,
@@ -692,20 +692,20 @@ void TemporalDemo::ProcessInput(const GameTimer &timer) {
   mViewCamera.UpdateViewMatrix();
 }
 
-void TemporalDemo::UpdateTransforms(const GameTimer &timer) {
-  if (mAllObjects.size() > 0) {
-    auto &sphere = mAllObjects[1];
+void TemporalDemo::UpdateTransforms(const GameTimer& timer) {
+    if (mAllObjects.size() > 0) {
+        auto& sphere = mAllObjects[1];
 
-    sphere->PreviousTransform = sphere->Transform;
+        // вычисляем новую позицию
+        float time = timer.TotalTime();
+        float yPos = 4.0f + sinf(time * 1.5f) * 2.0f;
+        XMMATRIX world = XMMatrixTranslation(0.0f, yPos, 0.0f);
 
-    float time = timer.TotalTime();
-    float yPos = 4.0f + sinf(time * 1.5f) * 2.0f;
+        // обновляем текущую трансформацию
+        XMStoreFloat4x4(&sphere->Transform, world);
 
-    XMMATRIX world = XMMatrixTranslation(0.0f, yPos, 0.0f);
-    XMStoreFloat4x4(&sphere->Transform, world);
-
-    sphere->DirtyCounter = gNumFrameResources;
-  }
+        sphere->DirtyCounter = gNumFrameResources;
+    }
 }
 
 void TemporalDemo::UpdateObjectBuffers(const GameTimer &timer) {
@@ -1176,7 +1176,7 @@ void TemporalDemo::CreateMaterials() {
   neonGreen->BufferIndex = 1;
   neonGreen->DiffuseSlot = 5;
   neonGreen->NormalSlot = 5;
-  neonGreen->BaseColor = XMFLOAT4(0.7f, 0.1f, 0.1f, 1.0f); // Ярко-красный
+  neonGreen->BaseColor = XMFLOAT4(0.1f, 0.9f, 0.2f, 1.0f); // Ярко-зелёный
   neonGreen->Reflectance = XMFLOAT3(0.1f, 0.1f, 0.1f);
   neonGreen->Smoothness = 0.4f;
 

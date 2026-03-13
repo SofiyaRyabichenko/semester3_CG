@@ -1,3 +1,14 @@
-﻿  TAAApp.cpp
-  TAA.vcxproj -> C:\computerGraphics\sem3\CG_3semester-main\3semester\Lab2\Lab2\TAA\x64\Debug\TAA.exe
+﻿  Camera.cpp
+  d3dApp.cpp
+  d3dUtil.cpp
+  DDSTextureLoader.cpp
+  GameTimer.cpp
+  GeometryGenerator.cpp
+  MathHelper.cpp
+  FrameResource.cpp
+  MotionVectors.cpp
+  TAAApp.cpp
+  TemporalAA.cpp
+  Создание кода...
+  TAA.vcxproj -> C:\computerGraphics\sem3_CG\lab2dop\Lab2\TAA\x64\Debug\TAA.exe
   Скопировано файлов: 0.
