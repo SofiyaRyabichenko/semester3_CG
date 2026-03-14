@@ -37,11 +37,6 @@ public:
     virtual void OnKeyDown(UINT8 key);
     virtual void OnKeyUp(UINT8 key);
 
-    // Новые методы для мыши
-    virtual void OnMouseDown(WPARAM buttonState, int x, int y) override;
-    virtual void OnMouseUp(WPARAM buttonState, int x, int y) override;
-    virtual void OnMouseMove(WPARAM buttonState, int x, int y) override;
-
 private:
     static const UINT FrameCount = 2;
 
@@ -91,14 +86,21 @@ private:
     void MoveToNextFrame();
     void WaitForGpu();
 
-    // Добавляем переменные для мыши
-    bool m_mouseLeftPressed;
-    int m_lastMouseX;
-    int m_lastMouseY;
-    float m_mouseSensitivity;
-
 private:
     static const wchar_t* c_meshFilename;
     static const wchar_t* c_meshShaderFilename;
     static const wchar_t* c_pixelShaderFilename;
+
+    struct AlbedoBinding
+    {
+        Microsoft::WRL::ComPtr<ID3D12DescriptorHeap> Heap; // shader-visible SRV heap (1 descriptor)
+        Microsoft::WRL::ComPtr<ID3D12Resource> Tex; // default heap texture
+        Microsoft::WRL::ComPtr<ID3D12Resource> Upload; // upload heap staging
+    };
+
+    AlbedoBinding m_albedo;
+    UINT m_cbvSrvUavInc = 0;
+
+    void InitAlbedoResources();
+    void BindAlbedoTexture();
 };

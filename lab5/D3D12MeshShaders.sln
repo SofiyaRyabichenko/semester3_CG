@@ -11,6 +11,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Элементы решен
 	ProjectSection(SolutionItems) = preProject
 		MeshletRender\D3D12MeshletRender.h = MeshletRender\D3D12MeshletRender.h
 		MeshletRender\DXSample.h = MeshletRender\DXSample.h
+		MeshletRender\SimpleCamera.h = MeshletRender\SimpleCamera.h
 	EndProjectSection
 EndProject
 Global
